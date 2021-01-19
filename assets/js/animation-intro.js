@@ -115,9 +115,9 @@
          offset: offsetFix,
 
      })
-     .addIndicators({
+    /*  .addIndicators({
          name: "fixo"
-     })
+     }) */
 
      .setPin(".wrapper", {
          pushFollowers: false,
@@ -139,9 +139,9 @@
      })
 
      .setTween(animationResize)
-     .addIndicators({
+    /*  .addIndicators({
          name: "RESIZE celular"
-     });
+     }); */
 
 
  // TITULO SCENE ===============================
@@ -153,9 +153,9 @@
      })
      // .setClassToggle("#high3", "active") // add class toggle
      .setTween(resizeText)
-     .addIndicators({
+    /*  .addIndicators({
          name: "RESIZE text"
-     })
+     }) */
 
  //CLASSE NO BODY SCENE ====================
  var sceneClass = new ScrollMagic.Scene({
@@ -166,9 +166,9 @@
 
      })
      .setClassToggle("body", "active")
-     .addIndicators({
+    /*  .addIndicators({
          name: "body"
-     })
+     }) */
      .setTween(menuAnimation)
 
 // FIX SCENE =====================================
@@ -180,9 +180,9 @@
 
      })
      .setClassToggle("body", "fixEnd")
-     .addIndicators({
+   /*   .addIndicators({
          name: "add class fix"
-     })
+     }) */
 
 //DEGRADE 1 GSAP ===================================
  const degrade = gsap.to(".degrade", {
@@ -201,9 +201,9 @@
          triggerHook: 0,
 
      })
-     .addIndicators({
+   /*   .addIndicators({
          name: "degrade"
-     })
+     }) */
      .setTween(degrade)
 
 
@@ -223,16 +223,14 @@
          triggerHook: 0,
 
      })
-     .addIndicators({
+  /*    .addIndicators({
          name: "Letra"
-     })
+     }) */
      .on("start", function typing() {
 
          var typewriter = new Typewriter(texto, {
              loop: false,
              delay: 65,
-             //onCreateTextNode: customNodeCreator,
-
          });
 
          typewriter
@@ -268,9 +266,9 @@
          triggerHook: 0,
 
      })
-     .addIndicators({
+    /*  .addIndicators({
          name: "Letra"
-     })
+     }) */
      .setTween(degrade2)
      .on("start", function typing() { //APLICA TIPEWRITTER NA CENA
          var typewriter = new Typewriter(texto2, {
@@ -281,7 +279,7 @@
          typewriter
              .start()
              .typeString('Se prepare para o futuro')
-             .pauseFor(1400)
+             .pauseFor(600)
              .deleteChars(6)
              .typeString('<strong> Presente. </strong>')
      })
