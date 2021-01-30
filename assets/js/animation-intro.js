@@ -186,7 +186,7 @@
 
 //DEGRADE 1 GSAP ===================================
  const degrade = gsap.to(".degrade", {
-     gradient: "linear-gradient(180deg, rgba(36,110,255,1) 0%, rgba(0,194,255,0.9051995798319328) 100%)",
+     gradient: "linear-gradient(180deg, #081131 2%, #f5f5f5 100%)",
      duration: 2,
      ease: "sine.out",
      //repeat: 3,
@@ -235,7 +235,7 @@
 
          typewriter
              .start()
-             .typeString('Inteligencia Artificial')
+             .typeString('<strong>Inteligência</strong> Artificial')
              .pauseFor(1200)
              .deleteAll()
              .typeString('')
@@ -249,7 +249,6 @@
 
  // gradiente 2 GSAP ===========================
  const degrade2 = gsap.to("#aprendaSection", {
-     gradient: "linear-gradient(180deg, rgba(36,110,255,1) 0%, rgba(0,194,255,0.9051995798319328) 100%)",
      duration: 2,
      ease: "sine.out",
      //repeat: 3,
