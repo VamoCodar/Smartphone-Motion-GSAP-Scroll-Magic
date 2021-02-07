@@ -63,36 +63,44 @@
  }
  scale()
 
- gsap.set(".grandient__2 h2", {
-     y: "-100%",
 
+ //SETA SEÇÃO ==========================
+ gsap.set(".grandient__2 h2", {
+     // y: "-100%",
+     display: "none",
  })
 
- gsap.set(".grandient__1 h2", {
-    y: 0,
+ /*  gsap.set(".grandient__1 h2", {
+      y: 0,
 
-})
+  }) */
 
  gsap.set(".grandient__2 p", {
      opacity: 0,
      // x: -200,
 
  })
+ gsap.set(".grandient__2 img", {
+    opacity: 0,
+    // x: -200,
 
-
-
+})
+ /* SEÇÃO ANIMAÇAO NOVA ======================== */
  const animationSecao = new TimelineMax()
-     .to(".grandient__1 h2", .2, {
-        y: "-100%",
-        ease: "none",
+     .to(".grandient__1 h2", .1, {
+         // y: "-100%",
+         ease: "none",
+         visibility: "hidden",
+
      })
 
-     .to(".grandient__2 h2", .2, {
-        y: 0,
-        //transformOrigin: "center",
-        ease: "none",
+     .to(".grandient__2 h2", .1, {
+         //y: 0,
+         //transformOrigin: "center",
+         ease: "none",
+         display: "block",
 
-     }/* ,"+=.2" */);
+     } /* ,"+=.2" */ );
 
 
 
@@ -190,11 +198,30 @@
   }) */
 
  // SECAO SCENE ===============================
+ var secaoTitleFixed = new ScrollMagic.Scene({
+         triggerElement: ".videoFixed",
+         duration: 300,
+         offset: 0,
+         triggerHook: .4,
+     })
+     // .setClassToggle("#high3", "active") // add class toggle
+     //  .setTween(animationSecao)
+     .setPin(".videoFixed", {
+         pushFollowers: true,
+         spacerClass: ".videoFixed",
+     })
+
+     .addIndicators({
+         name: "secao fixed"
+     })
+
+
+
  var secaoTitle = new ScrollMagic.Scene({
-         triggerElement: "#trigger1",
+         triggerElement: "#videoSection",
          duration: 0,
-         offset: 1750,
-         triggerHook: 0,
+         offset: 100,
+         triggerHook: .4,
      })
      // .setClassToggle("#high3", "active") // add class toggle
      .setTween(animationSecao)
@@ -242,10 +269,10 @@
 
  // DEGRADE SCENE ===================================
  var sceneDegrade = new ScrollMagic.Scene({
-         triggerElement: "#trigger1",
+         triggerElement: "#videoSection",
          duration: 0,
-         offset: 1350,
-         triggerHook: 0,
+         offset: 200,
+         triggerHook: .5,
 
      })
      /*   .addIndicators({
@@ -344,6 +371,7 @@
      sceneLetra,
      sceneLetra2,
      secaoTitle,
+     secaoTitleFixed,
 
  ]);
 

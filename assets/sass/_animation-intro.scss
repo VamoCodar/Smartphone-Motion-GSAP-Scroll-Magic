@@ -14,6 +14,10 @@ body {
 body.carregou {
     opacity: 1;
 }
+*{
+    transition-duration: 0 !important;
+    transition: initial !important;
+}
 
 
 @mixin sombra {
