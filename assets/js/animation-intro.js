@@ -326,13 +326,13 @@
  var sceneDegrade = new ScrollMagic.Scene({
          triggerElement: "#videoSection",
          duration: 0,
-         offset: 180,
-         triggerHook: .5,
+         offset: 100,
+         triggerHook: .4,
 
      })
-     /*   .addIndicators({
+       .addIndicators({
            name: "degrade"
-       }) */
+       })
      .setTween(degrade)
 
 
