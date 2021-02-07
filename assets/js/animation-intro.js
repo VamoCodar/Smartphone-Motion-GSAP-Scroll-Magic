@@ -28,6 +28,7 @@
      if (tela <= 400) {
          scaleVariable = 2.5
          xInicial = 0
+
      } else if (tela <= 540) {
          scaleVariable = 3
          xInicial = 0
@@ -43,21 +44,26 @@
      } else if (tela <= 1100) {
          scaleVariable = 6
          xInicial = 200
+
      } else if (tela <= 1366) {
          xInicial = 250
          scaleVariable = 9
          offsetFix = -130
+
      } else if (tela <= 1600) {
          scaleVariable = 12
          xInicial = 300
          offsetFix = -230
 
+
      } else if (tela <= 2000) {
          scaleVariable = 13
          xInicial = 150
+
      } else if (tela >= 2000) {
          scaleVariable = 13
          xInicial = 200
+
      }
 
  }
@@ -79,7 +85,8 @@
 
  gsap.set(".grandient__2 p", {
      opacity: 0,
-     // x: -200,
+     x: "-100%",
+
 
  })
  gsap.set(".grandient__2 img", {
@@ -98,6 +105,7 @@
 
      })
 
+
      .to(".grandient__2 h2", .2, {
          scaleX: 1,
          scaleY: 1,
@@ -108,6 +116,19 @@
          // x: 0,
      } /* ,"+=.2" */ );
 
+
+ let animationP = new TimelineMax()
+
+     .to(".grandient__1 p", .2, {
+         ease: "none",
+         opacity: 0,
+         x: "-100%",
+
+     })
+     .to(".grandient__2 p", .1, {
+         opacity: 1,
+         x: 0,
+     })
 
 
 
@@ -175,7 +196,6 @@
 
 
  //scale SCENE ===================================
-
  var sceneScale = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
          duration: 700,
@@ -207,7 +227,7 @@
  // SECAO SCENE ===============================
  var secaoTitleFixed = new ScrollMagic.Scene({
          triggerElement: ".videoFixed",
-         duration: 450,
+         duration: 550,
          offset: 0,
          triggerHook: .4,
      })
@@ -221,6 +241,21 @@
      .addIndicators({
          name: "secao fixed"
      })
+
+ // SECAO p SCENE ===============================
+ // TITULO SCENE ===============================
+ var secaoP = new ScrollMagic.Scene({
+         triggerElement: "#videoSection",
+         duration: 300,
+         offset: 200,
+         triggerHook: .4,
+     })
+     .setTween(animationP)
+
+     .addIndicators({
+         name: "p"
+     })
+ // .setClassToggle("#high3", "active") // add class toggle
 
 
 
@@ -393,7 +428,7 @@
      secaoTitle,
      secaoTitleFixed,
      secaoClass,
-
+     secaoP,
  ]);
 
  window.addEventListener("resize", scale)
