@@ -226,15 +226,28 @@
 
  var secaoTitle = new ScrollMagic.Scene({
          triggerElement: "#videoSection",
-         duration: 300,
+         duration: 0,
          offset: 100,
          triggerHook: .4,
      })
-     // .setClassToggle("#high3", "active") // add class toggle
+     //.setClassToggle("body", "corP") // add class toggle
      .setTween(animationSecao)
 
      .addIndicators({
          name: "secao"
+     })
+
+ var secaoClass = new ScrollMagic.Scene({
+         triggerElement: "#videoSection",
+         duration: 0,
+         offset: 100,
+         triggerHook: .4,
+     })
+     .setClassToggle("body", "corP") // add class toggle
+     //.setTween(animationSecao)
+
+     .addIndicators({
+         name: "class"
      })
 
 
@@ -379,6 +392,7 @@
      sceneLetra2,
      secaoTitle,
      secaoTitleFixed,
+     secaoClass,
 
  ]);
 
