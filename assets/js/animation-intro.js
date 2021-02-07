@@ -66,14 +66,14 @@
 
  //SETA SEÇÃO ==========================
  gsap.set(".grandient__2 h2", {
-     // y: "-100%",
-     display: "none",
+     x: "-200%",
+     //  display: "none",
  })
 
- /*  gsap.set(".grandient__1 h2", {
-      y: 0,
+   gsap.set(".grandient__1 h2", {
+      x: 0,
 
-  }) */
+  }) 
 
  gsap.set(".grandient__2 p", {
      opacity: 0,
@@ -81,25 +81,25 @@
 
  })
  gsap.set(".grandient__2 img", {
-    opacity: 0,
-    // x: -200,
+     opacity: 0,
+      x: -200,
 
-})
+ })
  /* SEÇÃO ANIMAÇAO NOVA ======================== */
  const animationSecao = new TimelineMax()
-     .to(".grandient__1 h2", .1, {
-         // y: "-100%",
+     .to(".grandient__1 h2", .2, {
+          x: "-200%",
          ease: "none",
-         visibility: "hidden",
+        // visibility: "hidden",
 
      })
 
-     .to(".grandient__2 h2", .1, {
+     .to(".grandient__2 h2", .2, {
          //y: 0,
          //transformOrigin: "center",
          ease: "none",
-         display: "block",
-
+         // display: "block",
+         x: 0,
      } /* ,"+=.2" */ );
 
 
@@ -200,7 +200,7 @@
  // SECAO SCENE ===============================
  var secaoTitleFixed = new ScrollMagic.Scene({
          triggerElement: ".videoFixed",
-         duration: 300,
+         duration: 450,
          offset: 0,
          triggerHook: .4,
      })
