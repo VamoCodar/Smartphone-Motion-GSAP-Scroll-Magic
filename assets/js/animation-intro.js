@@ -261,7 +261,7 @@
  //DEGRADE 1 GSAP ===================================
  const degrade = gsap.to(".degrade", {
      gradient: "linear-gradient(180deg, #081131 2%, #f5f5f5 100%)",
-     duration: 2,
+     duration: .1,
      ease: "sine.out",
      //repeat: 3,
      // yoyo: true
