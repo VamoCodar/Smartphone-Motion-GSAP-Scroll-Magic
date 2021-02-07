@@ -226,7 +226,7 @@
 
  var secaoTitle = new ScrollMagic.Scene({
          triggerElement: "#videoSection",
-         duration: 0,
+         duration: 300,
          offset: 100,
          triggerHook: .4,
      })
@@ -278,7 +278,7 @@
  var sceneDegrade = new ScrollMagic.Scene({
          triggerElement: "#videoSection",
          duration: 0,
-         offset: 200,
+         offset: 180,
          triggerHook: .5,
 
      })
