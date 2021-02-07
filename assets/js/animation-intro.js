@@ -246,7 +246,7 @@
  // TITULO SCENE ===============================
  var secaoP = new ScrollMagic.Scene({
          triggerElement: "#videoSection",
-         duration: 300,
+         duration: 200,
          offset: 200,
          triggerHook: .4,
      })
