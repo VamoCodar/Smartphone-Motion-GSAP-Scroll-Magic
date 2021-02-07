@@ -63,6 +63,38 @@
  }
  scale()
 
+ gsap.set(".grandient__2 h2", {
+     y: "-100%",
+
+ })
+
+ gsap.set(".grandient__1 h2", {
+    y: 0,
+
+})
+
+ gsap.set(".grandient__2 p", {
+     opacity: 0,
+     // x: -200,
+
+ })
+
+
+
+ const animationSecao = new TimelineMax()
+     .to(".grandient__1 h2", .2, {
+        y: "-100%",
+        ease: "none",
+     })
+
+     .to(".grandient__2 h2", .2, {
+        y: 0,
+        //transformOrigin: "center",
+        ease: "none",
+
+     }/* ,"+=.2" */);
+
+
 
 
 
@@ -115,9 +147,9 @@
          offset: offsetFix,
 
      })
-    /*  .addIndicators({
-         name: "fixo"
-     }) */
+     /*  .addIndicators({
+          name: "fixo"
+      }) */
 
      .setPin(".wrapper", {
          pushFollowers: false,
@@ -139,9 +171,9 @@
      })
 
      .setTween(animationResize)
-    /*  .addIndicators({
-         name: "RESIZE celular"
-     }); */
+ /*  .addIndicators({
+      name: "RESIZE celular"
+  }); */
 
 
  // TITULO SCENE ===============================
@@ -153,9 +185,24 @@
      })
      // .setClassToggle("#high3", "active") // add class toggle
      .setTween(resizeText)
-    /*  .addIndicators({
-         name: "RESIZE text"
-     }) */
+ /*  .addIndicators({
+      name: "RESIZE text"
+  }) */
+
+ // SECAO SCENE ===============================
+ var secaoTitle = new ScrollMagic.Scene({
+         triggerElement: "#trigger1",
+         duration: 0,
+         offset: 1750,
+         triggerHook: 0,
+     })
+     // .setClassToggle("#high3", "active") // add class toggle
+     .setTween(animationSecao)
+
+     .addIndicators({
+         name: "secao"
+     })
+
 
  //CLASSE NO BODY SCENE ====================
  var sceneClass = new ScrollMagic.Scene({
@@ -166,12 +213,12 @@
 
      })
      .setClassToggle("body", "active")
-    /*  .addIndicators({
-         name: "body"
-     }) */
+     /*  .addIndicators({
+          name: "body"
+      }) */
      .setTween(menuAnimation)
 
-// FIX SCENE =====================================
+ // FIX SCENE =====================================
  var sceneClassFix = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
          duration: 0,
@@ -180,11 +227,11 @@
 
      })
      .setClassToggle("body", "fixEnd")
-   /*   .addIndicators({
-         name: "add class fix"
-     }) */
+ /*   .addIndicators({
+       name: "add class fix"
+   }) */
 
-//DEGRADE 1 GSAP ===================================
+ //DEGRADE 1 GSAP ===================================
  const degrade = gsap.to(".degrade", {
      gradient: "linear-gradient(180deg, #081131 2%, #f5f5f5 100%)",
      duration: 2,
@@ -197,36 +244,39 @@
  var sceneDegrade = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
          duration: 0,
-         offset: 1650,
+         offset: 1350,
          triggerHook: 0,
 
      })
-   /*   .addIndicators({
-         name: "degrade"
-     }) */
+     /*   .addIndicators({
+           name: "degrade"
+       }) */
      .setTween(degrade)
 
 
 
  // TYPEWRITTER NO AUTOSTART ===================
- var typewriter = new Typewriter(texto, {
-     loop: false,
-     autoStart: false,
- });
+ /*  var typewriter = new Typewriter(texto, {
+      loop: false,
+      autoStart: false,
+  }); */
 
 
  // TEXTO 1 =================================
  var sceneLetra = new ScrollMagic.Scene({
-         triggerElement: "#trigger1",
-         duration: 0,
-         offset: 1650,
-         triggerHook: 0,
+     triggerElement: "#trigger1",
+     duration: 0,
+     offset: 1650,
+     triggerHook: 0,
 
-     })
-  /*    .addIndicators({
-         name: "Letra"
-     }) */
-     .on("start", function typing() {
+ })
+ /*  .addIndicators({
+      name: "Letra"
+  }) */
+ /* .setTween(degrade2) */
+
+
+ /*   .on("start", function typing() {
 
          var typewriter = new Typewriter(texto, {
              loop: false,
@@ -243,7 +293,7 @@
              .typeString('<strong>Transformação</strong> Digital')
              .pauseFor(2000)
      });
-
+ */
 
 
 
@@ -258,30 +308,30 @@
  //TEXTO 2 SCENE ========================================
  const texto2 = document.querySelector(".titulo__presente")
  var sceneLetra2 = new ScrollMagic.Scene({
-    //triggerElement: "#trigger1",
-    triggerElement: "#aprendaSection",
+         //triggerElement: "#trigger1",
+         triggerElement: "#aprendaSection",
          duration: 0,
          offset: 0,
          triggerHook: 0,
 
      })
-    /*  .addIndicators({
-         name: "Letra"
-     }) */
+     /*  .addIndicators({
+          name: "Letra"
+      }) */
      .setTween(degrade2)
-     .on("start", function typing() { //APLICA TIPEWRITTER NA CENA
-         var typewriter = new Typewriter(texto2, {
-             loop: false,
-             delay: 58,   //timing do tipyng
-             //onCreateTextNode: customNodeCreator,
-         });
-         typewriter
-             .start()
-             .typeString('Se prepare para o futuro')
-             .pauseFor(600)
-             .deleteChars(6)
-             .typeString('<strong> Presente. </strong>')
-     })
+ /* .on("start", function typing() { //APLICA TIPEWRITTER NA CENA
+     var typewriter = new Typewriter(texto2, {
+         loop: false,
+         delay: 58,   //timing do tipyng
+         //onCreateTextNode: customNodeCreator,
+     });
+     typewriter
+         .start()
+         .typeString('Se prepare para o futuro')
+         .pauseFor(600)
+         .deleteChars(6)
+         .typeString('<strong> Presente. </strong>')
+ }) */
 
  //controlador 
  controller.addScene([
@@ -293,6 +343,7 @@
      sceneDegrade,
      sceneLetra,
      sceneLetra2,
+     secaoTitle,
 
  ]);
 
