@@ -70,14 +70,16 @@
  scale()
 
 
- //SETA SEÇÃO ==========================
+ //SET  ==========================
+
  gsap.set(".grandient__2 h2", {
-     //x: "-200%",
+     x: "100vw",
      //  display: "none",
-     scaleX: 0,
-     scaleY: 1.5,
+    /*  scaleX: 0,
+     scaleY: 1.5, */
  })
 
+//  
  gsap.set(".grandient__1 h2", {
      x: 0,
 
@@ -85,7 +87,7 @@
 
  gsap.set(".grandient__2 p", {
      opacity: 0,
-     x: "-100%",
+     x: "100vw",
 
 
  })
@@ -96,25 +98,29 @@
  })
  /* SEÇÃO ANIMAÇAO NOVA ======================== */
  const animationSecao = new TimelineMax()
+
      .to(".grandient__1 h2", .2, {
-         //x: "-200%",
-         ease: "none",
-         scaleX: 0,
-         scaleY: 1.5,
+         x: "-100vw",
+         opacity: 0,
+
+         //  ease: "none",
+         //  scaleX: 0,
+         //  scaleY: 1.5,
          // visibility: "hidden",
 
+
      })
-
-
      .to(".grandient__2 h2", .2, {
-         scaleX: 1,
-         scaleY: 1,
+        x: 0,
+        ease: "none",
+
+
+         //  scaleX: 1,
+         //  scaleY: 1,
          //y: 0,
          //transformOrigin: "center",
-         ease: "none",
          // display: "block",
-         // x: 0,
-     } /* ,"+=.2" */ );
+     }  ,"+=.2"  );
 
 
  let animationP = new TimelineMax()
@@ -247,13 +253,14 @@
  var secaoP = new ScrollMagic.Scene({
          triggerElement: "#videoSection",
          duration: 200,
-         offset: 200,
+         offset: 100,
          triggerHook: .4,
      })
      .setTween(animationP)
 
      .addIndicators({
-         name: "p"
+         name: "p",
+
      })
  // .setClassToggle("#high3", "active") // add class toggle
 
@@ -261,7 +268,7 @@
 
  var secaoTitle = new ScrollMagic.Scene({
          triggerElement: "#videoSection",
-         duration: 0,
+         duration: 200,
          offset: 100,
          triggerHook: .4,
      })
@@ -330,9 +337,9 @@
          triggerHook: .4,
 
      })
-       .addIndicators({
-           name: "degrade"
-       })
+     .addIndicators({
+         name: "degrade"
+     })
      .setTween(degrade)
 
 
