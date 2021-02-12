@@ -72,36 +72,36 @@
 
  //SET  ==========================
 
- gsap.set(".grandient__2 h2", {
-     x: "100vw",
+ gsap.set(".grandient__2 ", {
+     x: "20vw",
      //  display: "none",
-    /*  scaleX: 0,
-     scaleY: 1.5, */
+     /*  scaleX: 0,
+      scaleY: 1.5, */
  })
 
-//  
- gsap.set(".grandient__1 h2", {
+/*  gsap.set(".grandient__1", {
      x: 0,
-
  })
-
- gsap.set(".grandient__2 p", {
+ */
+ gsap.set(".grandient__2", {
+     x: "20vw",
      opacity: 0,
-     x: "100vw",
 
 
  })
  gsap.set(".grandient__2 img", {
      opacity: 0,
      x: -200,
-
  })
+
+
+
  /* SEÇÃO ANIMAÇAO NOVA ======================== */
  const animationSecao = new TimelineMax()
 
-     .to(".grandient__1 h2", .2, {
-         x: "-100vw",
-         opacity: 0,
+    /*  .to(".grandient__1", .2, {
+         x: "-20vw",
+         
 
          //  ease: "none",
          //  scaleX: 0,
@@ -109,10 +109,10 @@
          // visibility: "hidden",
 
 
-     })
-     .to(".grandient__2 h2", .2, {
-        x: 0,
-        ease: "none",
+     }) */
+     .to(".grandient__2", .2, {
+         x: 0,
+         ease: "none",
 
 
          //  scaleX: 1,
@@ -120,18 +120,19 @@
          //y: 0,
          //transformOrigin: "center",
          // display: "block",
-     }  ,"+=.2"  );
+     }, "+=.2");
 
 
  let animationP = new TimelineMax()
 
-     .to(".grandient__1 p", .2, {
+     .to(".grandient__1", .2, {
          ease: "none",
          opacity: 0,
          x: "-100%",
 
      })
-     .to(".grandient__2 p", .1, {
+
+     .to(".grandient__2", .1, {
          opacity: 1,
          x: 0,
      })
@@ -233,7 +234,7 @@
  // SECAO SCENE ===============================
  var secaoTitleFixed = new ScrollMagic.Scene({
          triggerElement: ".videoFixed",
-         duration: 550,
+         duration: 850,
          offset: 0,
          triggerHook: .4,
      })
@@ -248,11 +249,12 @@
          name: "secao fixed"
      })
 
+
  // SECAO p SCENE ===============================
  // TITULO SCENE ===============================
  var secaoP = new ScrollMagic.Scene({
          triggerElement: "#videoSection",
-         duration: 200,
+         duration: 500,
          offset: 100,
          triggerHook: .4,
      })
@@ -268,7 +270,7 @@
 
  var secaoTitle = new ScrollMagic.Scene({
          triggerElement: "#videoSection",
-         duration: 200,
+         duration: 500,
          offset: 100,
          triggerHook: .4,
      })
@@ -293,6 +295,8 @@
      })
 
 
+
+
  //CLASSE NO BODY SCENE ====================
  var sceneClass = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
@@ -306,6 +310,7 @@
           name: "body"
       }) */
      .setTween(menuAnimation)
+
 
  // FIX SCENE =====================================
  var sceneClassFix = new ScrollMagic.Scene({
@@ -323,7 +328,7 @@
  //DEGRADE 1 GSAP ===================================
  const degrade = gsap.to(".degrade", {
      gradient: "linear-gradient(180deg, #081131 2%, #f5f5f5 100%)",
-     duration: .1,
+     duration: .3,
      ease: "sine.out",
      //repeat: 3,
      // yoyo: true
