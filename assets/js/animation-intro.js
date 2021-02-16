@@ -144,7 +144,7 @@
      .to(".artificial__2 p", .1, {
          opacity: 1,
          x: 0,
-     })
+     },"-=.1")
      .to(".artificial__2 img", .1, {
          opacity: 1,
          x: 0,
@@ -275,9 +275,9 @@
          spacerClass: ".videoFixed",
      })
 
-     .addIndicators({
-         name: "secao fixed"
-     })
+    //  .addIndicators({
+    //      name: "secao fixed"
+    //  })
 
 
  // SECAO p SCENE ===============================
@@ -314,7 +314,7 @@
          triggerElement: "#videoSection",
          duration: 0,
          offset: 100,
-         triggerHook: .4,
+         triggerHook: triggerSecao2,
      })
      .setClassToggle("body", "corP") // add class toggle
      //.setTween(animationSecao)
@@ -368,7 +368,7 @@
          triggerElement: "#videoSection",
          duration: 0,
          offset: 100,
-         triggerHook: .4,
+         triggerHook: triggerSecao2,
 
      })
      .addIndicators({
