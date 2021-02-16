@@ -21,6 +21,11 @@
  let tempoSecaoFixa = 1450; // tempo que segunda seção fica fixa
  let tempoAnimaoSegundaSecao = 800; //tempo que dura a animação
 
+//VARIAVEIS ANIMAÇAO SEÇÃO FUTURO 
+let tempoSecaoPresenteFixa = 600;
+let tempoAnimacaoPresente = 450;
+let trigerSecaoPresente = .5;
+
 
  //plugin gradiente ======================
  gsap.registerPlugin({
@@ -439,17 +444,18 @@
 
  //TEXTO 2 SCENE ========================================
  const texto2 = document.querySelector(".titulo__presente")
- var sceneLetra2 = new ScrollMagic.Scene({
+
+ var sceneDegrade2 = new ScrollMagic.Scene({
          //triggerElement: "#trigger1",
-         triggerElement: "#aprendaSection",
+         triggerElement: "#futuroAnimation",
          duration: 0,
          offset: 0,
-         triggerHook: 0,
+         triggerHook: trigerSecaoPresente,
 
      })
-     /*  .addIndicators({
-          name: "Letra"
-      }) */
+       .addIndicators({
+          name: "degrade-2"
+      }) 
      .setTween(degrade2)
  /* .on("start", function typing() { //APLICA TIPEWRITTER NA CENA
      var typewriter = new Typewriter(texto2, {
@@ -478,9 +484,7 @@
      }, /* "-=0.2" */)
 
 
- let tempoSecaoPresenteFixa = 500;
- let tempoAnimacaoPresente = 200;
- let trigerSecaoPresente = .5;
+
  // SECAO SCENE ===============================
  var secaoPresenteFixed = new ScrollMagic.Scene({
          triggerElement: ".futuroAnimation",
@@ -521,8 +525,8 @@
      sceneClass,
      sceneClassFix,
      sceneDegrade,
-     sceneLetra,
-     sceneLetra2,
+    //  sceneLetra,
+     sceneDegrade2,
      secaoTitle,
      secaoTitleFixed,
      secaoClass,
