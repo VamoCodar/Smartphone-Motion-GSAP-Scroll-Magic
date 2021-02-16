@@ -22,9 +22,9 @@
  let tempoAnimaoSegundaSecao = 800; //tempo que dura a animação
 
 //VARIAVEIS ANIMAÇAO SEÇÃO FUTURO 
-let tempoSecaoPresenteFixa = 600;
-let tempoAnimacaoPresente = 450;
-let trigerSecaoPresente = .5;
+let tempoSecaoPresenteFixa = 1000;
+let tempoAnimacaoPresente = 550;
+let trigerSecaoPresente = .4;
 
 
  //plugin gradiente ======================
@@ -481,7 +481,7 @@ let trigerSecaoPresente = .5;
      })
      .to(".presenteAnimation", .2, {
          y: 0,
-     }, /* "-=0.2" */)
+     }, "-=0.1")
 
 
 

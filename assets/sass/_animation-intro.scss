@@ -460,7 +460,7 @@ video::-webkit-media-controls {
 .text__container{
     position:relative;
     display: inline-flex;
-    width: 280px;
+    width: 450px;
     overflow: hidden;
 }
 #aprendaSection .titulo__presente {
@@ -468,6 +468,7 @@ video::-webkit-media-controls {
 }
 .titulo__presente{
     text-align: center !important;
+    font-size: 90px !important;
     @include d(m){
         max-width: 500px;
     }
