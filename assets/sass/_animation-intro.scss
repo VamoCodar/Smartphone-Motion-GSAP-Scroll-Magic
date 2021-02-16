@@ -51,12 +51,12 @@ sans-serif;
 .degrade {
     background: linear-gradient(180deg, rgb(0, 8, 77) 28%, rgb(60, 78, 211) 100%);
     position: absolute;
-    padding-top: 4200px;
+    padding-top: 5000px;
     top: 0;
     width: 100%;
 
     @include d(m) {
-        padding-top: 5000px;
+        padding-top: 3320px;
     }
 }
 
