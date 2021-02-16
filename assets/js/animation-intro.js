@@ -24,7 +24,7 @@
 //VARIAVEIS ANIMAÇAO SEÇÃO FUTURO 
 let tempoSecaoPresenteFixa = 1000;
 let tempoAnimacaoPresente = 550;
-let trigerSecaoPresente = .4;
+let trigerSecaoPresente = .3;
 
 
  //plugin gradiente ======================
@@ -43,17 +43,17 @@ let trigerSecaoPresente = .4;
          scaleVariable = 2.5
          xInicial = 0
          triggerSecao2 = .3;
-
+         trigerSecaoPresente = .4;
      } else if (tela <= 540) {
          scaleVariable = 3
          xInicial = 0
          triggerSecao2 = .3;
-
+         trigerSecaoPresente = .4;
      } else if (tela <= 720) {
          scaleVariable = 6
          xInicial = -100
          triggerSecao2 = .3;
-
+         trigerSecaoPresente = .4;
 
      } else if (tela <= 992) {
          scaleVariable = 6

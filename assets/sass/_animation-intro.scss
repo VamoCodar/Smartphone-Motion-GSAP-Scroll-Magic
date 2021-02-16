@@ -483,6 +483,10 @@ video::-webkit-media-controls {
     font-size: 90px !important;
     line-height: 150%;
 
+    @include d(ll){
+        zoom: 1.4;
+    }
+
     @include d(m) {
         font-size: 62px !important;
     }
@@ -531,6 +535,11 @@ video::-webkit-media-controls {
     }
 }
 
-.fixEnd .degrade {
+.corP .degrade {
     z-index: -2;
+}
+.margin__top{
+    @include d(ll){
+        margin-top: 150px;
+    }
 }
