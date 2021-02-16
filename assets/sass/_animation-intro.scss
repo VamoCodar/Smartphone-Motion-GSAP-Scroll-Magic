@@ -467,6 +467,7 @@ video::-webkit-media-controls {
     margin: 0px auto !important;
 }
 .titulo__presente{
+    text-align: center !important;
     @include d(m){
         max-width: 500px;
     }
