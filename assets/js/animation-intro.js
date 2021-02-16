@@ -264,7 +264,7 @@
  // SECAO SCENE ===============================
  var secaoTitleFixed = new ScrollMagic.Scene({
          triggerElement: ".videoFixed",
-         duration: 1250,
+         duration: 1450,
          offset: 0,
          triggerHook: triggerSecao2,
      })
@@ -300,7 +300,7 @@
  var secaoTitle = new ScrollMagic.Scene({
          triggerElement: "#videoSection",
          duration: 800,
-         offset: 200,
+         offset: 300,
          triggerHook: triggerSecao2,
      })
      //.setClassToggle("body", "corP") // add class toggle
@@ -313,7 +313,7 @@
  var secaoClass = new ScrollMagic.Scene({
          triggerElement: "#videoSection",
          duration: 0,
-         offset: 200,
+         offset: 300,
          triggerHook: triggerSecao2,
      })
      .setClassToggle("body", "corP") // add class toggle
@@ -367,7 +367,7 @@
  var sceneDegrade = new ScrollMagic.Scene({
          triggerElement: "#videoSection",
          duration: 0,
-         offset: 200,
+         offset: 300,
          triggerHook: triggerSecao2,
 
      })
