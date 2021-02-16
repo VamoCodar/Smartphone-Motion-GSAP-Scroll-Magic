@@ -3,8 +3,10 @@
  let wrapper = document.querySelector(".wrapper")
  let celular = document.querySelector(".celular")
  let body = document.querySelector("body")
+ //timelines GSAP
  const timeline = new TimelineMax();
  const animationResize = new TimelineMax();
+ //variaveis Animação do celular
  let scaleVariable;
  let xInicial;
  let offsetFix = -230;
@@ -13,7 +15,12 @@
  //controlador
  let controller = new ScrollMagic.Controller();
  //timeline
+
+ //VARIAVEIS ANIMAÇÃO SEÇÃO 2
  var triggerSecao2 = .4;
+ let tempoSecaoFixa = 1450; // tempo que segunda seção fica fixa
+ let tempoAnimaoSegundaSecao = 800; //tempo que dura a animação
+
 
  //plugin gradiente ======================
  gsap.registerPlugin({
@@ -144,11 +151,11 @@
      .to(".artificial__2 p", .1, {
          opacity: 1,
          x: 0,
-     },"-=.1")
+     }, "-=.1")
      .to(".artificial__2 img", .1, {
          opacity: 1,
          x: 0,
-     },"-=.1")
+     }, "-=.1")
 
 
 
@@ -261,10 +268,11 @@
       name: "RESIZE text"
   }) */
 
+
  // SECAO SCENE ===============================
  var secaoTitleFixed = new ScrollMagic.Scene({
          triggerElement: ".videoFixed",
-         duration: 1450,
+         duration: tempoSecaoFixa,
          offset: 0,
          triggerHook: triggerSecao2,
      })
@@ -296,10 +304,9 @@
  //      })
  // .setClassToggle("#high3", "active") // add class toggle
 
-
  var secaoTitle = new ScrollMagic.Scene({
          triggerElement: "#videoSection",
-         duration: 800,
+         duration: tempoAnimaoSegundaSecao,
          offset: 300,
          triggerHook: triggerSecao2,
      })
@@ -455,6 +462,52 @@
          .deleteChars(6)
          .typeString('<strong> Presente. </strong>')
  }) */
+ gsap.set(".presenteAnimation", {
+     y: "-100%"
+ })
+
+ const presentefuturoAnimation =
+     new TimelineMax()
+     .to(".text__futuro", .2, {
+         y: "300px",
+     })
+     .to(".presenteAnimation", .2, {
+        y: 0,
+    },"-=0.2")
+
+
+
+ // SECAO SCENE ===============================
+ var secaoPresenteFixed = new ScrollMagic.Scene({
+         triggerElement: ".futuroAnimation",
+         duration: tempoSecaoFixa,
+         offset: 100,
+         triggerHook: triggerSecao2,
+     })
+     // .setClassToggle("#high3", "active") // add class toggle
+     //  .setTween(animationSecao)
+     .setPin(".futuroAnimation", {
+         pushFollowers: true,
+         //  spacerClass: ".futuroAnimation",
+     })
+
+     .addIndicators({
+         name: "secao fixed"
+     })
+
+ var scenePresente = new ScrollMagic.Scene({
+         triggerElement: ".futuroAnimation",
+         duration: tempoAnimaoSegundaSecao,
+         offset: 300,
+         triggerHook: triggerSecao2,
+     })
+     //.setClassToggle("body", "corP") // add class toggle
+     .setTween(presentefuturoAnimation)
+
+     .addIndicators({
+         name: "FUTURO "
+     })
+
 
  //controlador 
  controller.addScene([
@@ -469,7 +522,8 @@
      secaoTitle,
      secaoTitleFixed,
      secaoClass,
-     //  secaoP,
+     secaoPresenteFixed,
+     scenePresente,
  ]);
 
  window.addEventListener("resize", scale)

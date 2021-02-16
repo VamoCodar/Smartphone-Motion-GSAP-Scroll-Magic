@@ -293,9 +293,9 @@
 				overflow: hidden;
 
 			}
-			#simplesSection{
+
+			#simplesSection {
 				padding-top: 180px;
-				opacity: 0;
 
 			}
 
@@ -303,9 +303,10 @@
 				color: black;
 				font-size: 18px;
 			}
-			#simplesSection .circulo{
-				background-color:#0dcaf06b;
-			} 
+
+			#simplesSection .circulo {
+				background-color: #0dcaf06b;
+			}
 		</style>
 
 	</div>
@@ -471,13 +472,11 @@
 				padding-top: 0;
 			}
 
-			#aprendaSection h2 span {
-				color: #bcbcbc !important;
-			}
+
 
 			#aprendaSection h2 {
-				color: #bcbcbc !important;
-				font-size: 3.5rem !important;
+				color: #bcbcbc;
+				font-size: 3.5rem;
 			}
 
 			#aprendaSection .titulo__presente {
@@ -489,11 +488,46 @@
 			#futuroSection .gradient {
 				padding: 100px 0 70px 0;
 			}
+
+			.futuroAnimation {
+				height: 350px;
+				margin: 0;
+			}
+
+			.presenteAnimation {
+				color: #0083ff;
+				display: inline-block;
+
+			}
+
+			.text__futuro {
+				color: #bcbcbc;
+				display: inline-block;
+
+			}
+
+			.titulo__presente {
+				overflow: hidden;
+				width: 100%;
+				/* text-align: center; */
+				position:relative;
+
+			}
 		</style>
 		<div class="container mb-5 pb-5">
-			<h2 style="" class="titulo__presente">
-				Se prepare para o futuro
-			</h2>
+
+			<div class="futuroAnimation">
+				<h2 class="titulo__presente">
+					Se prepare para o <span class="text__container"><span class="text__futuro">futuro</span> <span class="presenteAnimation">
+						Presente
+					</span></span>
+					
+				</h2>
+
+
+			</div>
+
+
 		</div>
 		<div class="container">
 			<div class="curso" data-aos="fade-up" data-aos-duration="1000">

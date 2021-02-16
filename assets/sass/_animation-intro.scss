@@ -429,7 +429,7 @@ video::-webkit-media-controls {
 }
 
 #ferramentasSection{
-    padding-bottom:60px;
+    padding-bottom:160px;
 }
 .artificial {
     p{
@@ -443,5 +443,28 @@ video::-webkit-media-controls {
 @media (max-width: 768px) {
     #futuroSection {
         margin-top: 0px !important;
+    }
+}
+
+
+.text__futuro{
+    position:relative;
+
+}
+.presenteAnimation{
+    position:absolute;
+    left: 0;
+
+    // margin: auto;
+}
+.text__container{
+    position:relative;
+}
+#aprendaSection .titulo__presente {
+    margin: 0px auto !important;
+}
+.titulo__presente{
+    @include d(m){
+        max-width: 500px;
     }
 }
