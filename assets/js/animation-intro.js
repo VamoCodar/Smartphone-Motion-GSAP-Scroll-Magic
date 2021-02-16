@@ -32,6 +32,7 @@
  });
 
  //verificação scale +++ =================
+
  function scale() {
      if (tela <= 400) {
          scaleVariable = 2.5
@@ -72,10 +73,10 @@
          xInicial = 150
 
      } else if (tela >= 2400) {
-        scaleVariable = 20
-        xInicial = 200
+         scaleVariable = 20
+         xInicial = 200
 
-    }
+     }
 
 
  }
@@ -470,20 +471,22 @@
  const presentefuturoAnimation =
      new TimelineMax()
      .to(".text__futuro", .2, {
-         y: "300px",
+         y: "100%",
      })
      .to(".presenteAnimation", .2, {
-        y: 0,
-    },"-=0.2")
+         y: 0,
+     }, /* "-=0.2" */)
 
 
-
+ let tempoSecaoPresenteFixa = 500;
+ let tempoAnimacaoPresente = 200;
+ let trigerSecaoPresente = .5;
  // SECAO SCENE ===============================
  var secaoPresenteFixed = new ScrollMagic.Scene({
          triggerElement: ".futuroAnimation",
-         duration: tempoSecaoFixa,
-         offset: 100,
-         triggerHook: triggerSecao2,
+         duration: tempoSecaoPresenteFixa,
+         offset: 0,
+         triggerHook: trigerSecaoPresente,
      })
      // .setClassToggle("#high3", "active") // add class toggle
      //  .setTween(animationSecao)
@@ -498,9 +501,9 @@
 
  var scenePresente = new ScrollMagic.Scene({
          triggerElement: ".futuroAnimation",
-         duration: tempoAnimaoSegundaSecao,
-         offset: 300,
-         triggerHook: triggerSecao2,
+         duration: tempoAnimacaoPresente,
+         offset: 200,
+         triggerHook: trigerSecaoPresente,
      })
      //.setClassToggle("body", "corP") // add class toggle
      .setTween(presentefuturoAnimation)
