@@ -445,33 +445,34 @@ let trigerSecaoPresente = .4;
  //TEXTO 2 SCENE ========================================
  const texto2 = document.querySelector(".titulo__presente")
 
- var sceneDegrade2 = new ScrollMagic.Scene({
-         //triggerElement: "#trigger1",
-         triggerElement: "#futuroAnimation",
-         duration: 0,
-         offset: 0,
-         triggerHook: trigerSecaoPresente,
+//  var sceneDegrade2 = new ScrollMagic.Scene({
+//          //triggerElement: "#trigger1",
+//         //  triggerElement: ".futuroAnimation",
+//          duration: 0,
+//          offset: 0,
+//          triggerHook: trigerSecaoPresente,
 
-     })
-       .addIndicators({
-          name: "degrade-2"
-      }) 
-     .setTween(degrade2)
- /* .on("start", function typing() { //APLICA TIPEWRITTER NA CENA
-     var typewriter = new Typewriter(texto2, {
-         loop: false,
-         delay: 58,   //timing do tipyng
-         //onCreateTextNode: customNodeCreator,
-     });
-     typewriter
-         .start()
-         .typeString('Se prepare para o futuro')
-         .pauseFor(600)
-         .deleteChars(6)
-         .typeString('<strong> Presente. </strong>')
- }) */
+//      })
+//        .addIndicators({
+//           name: "degrade-2"
+//       }) 
+//      .setTween(degrade2)
+//  /* .on("start", function typing() { //APLICA TIPEWRITTER NA CENA
+//      var typewriter = new Typewriter(texto2, {
+//          loop: false,
+//          delay: 58,   //timing do tipyng
+//          //onCreateTextNode: customNodeCreator,
+//      });
+//      typewriter
+//          .start()
+//          .typeString('Se prepare para o futuro')
+//          .pauseFor(600)
+//          .deleteChars(6)
+//          .typeString('<strong> Presente. </strong>')
+//  }) */
+
  gsap.set(".presenteAnimation", {
-     y: "-100%"
+     y: "-220px"
  })
 
  const presentefuturoAnimation =
@@ -481,7 +482,7 @@ let trigerSecaoPresente = .4;
      })
      .to(".presenteAnimation", .2, {
          y: 0,
-     }, "-=0.1")
+     }, "-=0.200")
 
 
 
@@ -496,7 +497,7 @@ let trigerSecaoPresente = .4;
      //  .setTween(animationSecao)
      .setPin(".futuroAnimation", {
          pushFollowers: true,
-         //  spacerClass: ".futuroAnimation",
+           spacerClass: "fixoOrna",
      })
 
      .addIndicators({
@@ -526,7 +527,7 @@ let trigerSecaoPresente = .4;
      sceneClassFix,
      sceneDegrade,
     //  sceneLetra,
-     sceneDegrade2,
+    //  sceneDegrade2,
      secaoTitle,
      secaoTitleFixed,
      secaoClass,

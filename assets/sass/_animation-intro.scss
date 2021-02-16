@@ -14,7 +14,8 @@ body {
 body.carregou {
     opacity: 1;
 }
-*{
+
+* {
     transition-duration: 0 !important;
     transition: initial !important;
 }
@@ -54,7 +55,7 @@ sans-serif;
     top: 0;
     width: 100%;
 
-    @include d(m){
+    @include d(m) {
         padding-top: 3320px;
     }
 }
@@ -428,14 +429,15 @@ video::-webkit-media-controls {
     padding-bottom: 120px;
 }
 
-#ferramentasSection{
-    padding-bottom:160px;
+#ferramentasSection {
+    padding-bottom: 160px;
 }
+
 .artificial {
-    p{
-        @include d(s){
-            font-size:18px;
-            line-height:125%;
+    p {
+        @include d(s) {
+            font-size: 18px;
+            line-height: 125%;
         }
     }
 }
@@ -447,29 +449,89 @@ video::-webkit-media-controls {
 }
 
 
-.text__futuro{
-    position:relative;
+.text__futuro {
+    position: relative;
+    text-transform: uppercase;
 
 }
-.presenteAnimation{
-    position:absolute;
+
+.presenteAnimation {
+    position: absolute;
     left: 0;
 
     // margin: auto;
 }
-.text__container{
-    position:relative;
+
+.text__container {
+    position: relative;
     display: inline-flex;
     width: 450px;
     overflow: hidden;
+
+    @include d(m) {
+        padding-right: 50px;
+        width: initial;
+    }
 }
+
 #aprendaSection .titulo__presente {
     margin: 0px auto !important;
 }
-.titulo__presente{
+
+.titulo__presente {
     text-align: center !important;
     font-size: 90px !important;
-    @include d(m){
-        max-width: 500px;
+    line-height: 150%;
+
+    @include d(m) {
+        // max-width: 500px;
+        font-size: 62px !important;
     }
+
+    @include d(s) {
+        zoom: .7;
+    }
+
+    @include d(ss) {
+        zoom: .6;
+
+    }
+}
+
+.fixoOrna {
+    overflow: hidden;
+    &:after {
+        content: "";
+        display: block;
+        height: 320px;
+        width: 320px;
+        background-color: #91e1f4;
+        border-radius: 50%;
+        position: absolute;
+        right: -30%;
+        bottom: -100px;
+
+        @include d(m) {
+            display: none;
+        }
+
+        @include d(s) {
+            right: -150px !important;
+            display:block;
+            bottom: -200px;
+
+        }
+    }
+}
+
+.zerado {
+
+    @include d(m) {
+        padding: 0 !important;
+        margin: 0 auto !important;
+    }
+}
+
+.fixEnd .degrade {
+    z-index: -2;
 }
