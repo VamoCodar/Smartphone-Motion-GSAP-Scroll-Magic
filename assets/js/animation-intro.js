@@ -471,7 +471,7 @@
  const presentefuturoAnimation =
      new TimelineMax()
      .to(".text__futuro", .2, {
-         y: "100%",
+         y: "100px",
      })
      .to(".presenteAnimation", .2, {
          y: 0,
