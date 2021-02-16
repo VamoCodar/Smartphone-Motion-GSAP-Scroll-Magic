@@ -13,6 +13,7 @@
  //controlador
  let controller = new ScrollMagic.Controller();
  //timeline
+ var triggerSecao2 = .4;
 
  //plugin gradiente ======================
  gsap.registerPlugin({
@@ -28,15 +29,18 @@
      if (tela <= 400) {
          scaleVariable = 2.5
          xInicial = 0
+         triggerSecao2 = .3;
 
      } else if (tela <= 540) {
          scaleVariable = 3
          xInicial = 0
-
+         triggerSecao2 = .3;
 
      } else if (tela <= 720) {
          scaleVariable = 6
          xInicial = -100
+         triggerSecao2 = .3;
+
 
      } else if (tela <= 992) {
          scaleVariable = 6
@@ -72,70 +76,96 @@
 
  //SET  ==========================
 
- gsap.set(".grandient__2 ", {
-     x: "20vw",
+ gsap.set(".artificial__2 h2 ", {
+     x: "100%",
+     opacity: 0,
+
      //  display: "none",
      /*  scaleX: 0,
       scaleY: 1.5, */
  })
 
-/*  gsap.set(".grandient__1", {
-     x: 0,
- })
- */
- gsap.set(".grandient__2", {
-     x: "20vw",
+ /*  gsap.set(".artificial__1", {
+      x: 0,
+  })
+  */
+ gsap.set(".artificial__2 p", {
+     x: "100%",
      opacity: 0,
 
 
  })
- gsap.set(".grandient__2 img", {
+ gsap.set(".artificial__2 img", {
+     x: "100%",
      opacity: 0,
-     x: -200,
+
  })
 
 
 
  /* SEÇÃO ANIMAÇAO NOVA ======================== */
  const animationSecao = new TimelineMax()
-
-    /*  .to(".grandient__1", .2, {
-         x: "-20vw",
-         
-
+     .to(".artificial__1 h2", .2, {
+         x: "-100%",
+         opacity: 0,
          //  ease: "none",
          //  scaleX: 0,
          //  scaleY: 1.5,
          // visibility: "hidden",
+     })
+     .to(".artificial__1 p", .2, {
 
-
-     }) */
-     .to(".grandient__2", .2, {
-         x: 0,
-         ease: "none",
-
-
+         x: "-100%",
+         opacity: 0,
          //  scaleX: 1,
          //  scaleY: 1,
          //y: 0,
          //transformOrigin: "center",
          // display: "block",
-     }, "+=.2");
+     }, "-=.150")
+     .to(".artificial__1 img", .2, {
+
+         x: "-100vw",
+         opacity: 0,
+         //  scaleX: 1,
+         //  scaleY: 1,
+         //y: 0,
+         //transformOrigin: "center",
+         // display: "block",
+     }, "-=.2")
+
+     .to(".artificial__2 h2", .2, {
+         // ease: "none",
+         opacity: 1,
+         x: 0,
+
+     }, "-=.050")
+
+     .to(".artificial__2 p", .1, {
+         opacity: 1,
+         x: 0,
+     })
+     .to(".artificial__2 img", .1, {
+         opacity: 1,
+         x: 0,
+     },"-=.1")
 
 
- let animationP = new TimelineMax()
 
-     .to(".grandient__1", .2, {
+
+ /* let animationP = new TimelineMax()
+
+     .to(".artificial__1", .2, {
          ease: "none",
          opacity: 0,
          x: "-100%",
 
      })
 
-     .to(".grandient__2", .1, {
+     .to(".artificial__2", .1, {
          opacity: 1,
          x: 0,
-     })
+     }) */
 
 
 
@@ -236,7 +266,7 @@
          triggerElement: ".videoFixed",
          duration: 850,
          offset: 0,
-         triggerHook: .4,
+         triggerHook: triggerSecao2,
      })
      // .setClassToggle("#high3", "active") // add class toggle
      //  .setTween(animationSecao)
@@ -252,27 +282,26 @@
 
  // SECAO p SCENE ===============================
  // TITULO SCENE ===============================
- var secaoP = new ScrollMagic.Scene({
-         triggerElement: "#videoSection",
-         duration: 500,
-         offset: 100,
-         triggerHook: .4,
-     })
-     .setTween(animationP)
+ //  var secaoP = new ScrollMagic.Scene({
+ //          triggerElement: "#videoSection",
+ //          duration: 500,
+ //          offset: 100,
+ //          triggerHook: .4,
+ //      })
+ //      .setTween(animationP)
 
-     .addIndicators({
-         name: "p",
+ //      .addIndicators({
+ //          name: "p",
 
-     })
+ //      })
  // .setClassToggle("#high3", "active") // add class toggle
-
 
 
  var secaoTitle = new ScrollMagic.Scene({
          triggerElement: "#videoSection",
          duration: 500,
          offset: 100,
-         triggerHook: .4,
+         triggerHook: triggerSecao2,
      })
      //.setClassToggle("body", "corP") // add class toggle
      .setTween(animationSecao)
@@ -328,7 +357,7 @@
  //DEGRADE 1 GSAP ===================================
  const degrade = gsap.to(".degrade", {
      gradient: "linear-gradient(180deg, #081131 2%, #f5f5f5 100%)",
-     duration: .3,
+     duration: .2,
      ease: "sine.out",
      //repeat: 3,
      // yoyo: true
@@ -440,7 +469,7 @@
      secaoTitle,
      secaoTitleFixed,
      secaoClass,
-     secaoP,
+     //  secaoP,
  ]);
 
  window.addEventListener("resize", scale)

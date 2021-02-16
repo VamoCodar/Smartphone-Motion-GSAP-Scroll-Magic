@@ -209,7 +209,7 @@
 
 
 		<div class="videoFixed">
-			<div class="grandient flexMode grandient__1">
+			<div class="artificial flexMode artificial__1">
 				<div class="container">
 					<div class="row justify-content-center">
 						<div class="col-md-8">
@@ -227,7 +227,7 @@
 			</div>
 
 			<!-- seção absolute -->
-			<div class="grandient grandient__2 flexMode">
+			<div class="artificial artificial__2 flexMode">
 				<div class="container">
 					<div class="row justify-content-center">
 						<div class="col-md-8">
@@ -246,14 +246,15 @@
 		</div>
 
 		<style>
-			body{
+			body {
 				overflow-x: hidden !important;
 			}
+
 			#videoSection {
 				position: relative;
 			}
 
-			.grandient__2 {
+			.artificial__2 {
 				position: absolute;
 				top: 0;
 				left: 0;
@@ -261,32 +262,41 @@
 				margin: 0 auto;
 			}
 
-			/* 	.grandient .col-md-8 {
+			/* 	.artificial .col-md-8 {
 				overflow: hidden;
 			}
  */
-			.grandient h2,
-			.grandient,
+			.artificial h2,
+			.artificial,
 			.videoFixed {
 				transition: initial !important;
 				transition-duration: 0 !important;
 			}
 
-			.corP .grandient p {
+			.corP .artificial p {
 				color: black;
 			}
 
-			.grandient {
+			.artificial {
 				overflow: hidden;
 			}
-			.videoSection{
+
+			.videoSection {
 				overflow: hidden;
 			}
-			.videoFixed{
+
+			.videoFixed {
 				overflow: hidden;
 			}
-			.videoFixed{
-				overflow-x: hidden;
+
+			[class=".videoSection"] {
+				overflow: hidden;
+
+			}
+
+			#simplesSection p {
+				color: black;
+				font-size: 18px;
 			}
 		</style>
 
@@ -318,7 +328,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 
 	<div id="appSection" data-aos="fade-right" data-aos-duration="1000">
 		<div class="gradient" data-aos="fade-right" data-aos-duration="1000">
