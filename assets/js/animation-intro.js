@@ -140,7 +140,7 @@
          x: 0,
 
      }, "-=.050")
-     
+
      .to(".artificial__2 p", .1, {
          opacity: 1,
          x: 0,
@@ -264,7 +264,7 @@
  // SECAO SCENE ===============================
  var secaoTitleFixed = new ScrollMagic.Scene({
          triggerElement: ".videoFixed",
-         duration: 850,
+         duration: 1250,
          offset: 0,
          triggerHook: triggerSecao2,
      })
@@ -275,9 +275,9 @@
          spacerClass: ".videoFixed",
      })
 
-    //  .addIndicators({
-    //      name: "secao fixed"
-    //  })
+     .addIndicators({
+         name: "secao fixed"
+     })
 
 
  // SECAO p SCENE ===============================
@@ -299,7 +299,7 @@
 
  var secaoTitle = new ScrollMagic.Scene({
          triggerElement: "#videoSection",
-         duration: 500,
+         duration: 800,
          offset: 100,
          triggerHook: triggerSecao2,
      })
