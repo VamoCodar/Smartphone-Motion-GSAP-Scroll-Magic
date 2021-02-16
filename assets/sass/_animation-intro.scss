@@ -484,7 +484,6 @@ video::-webkit-media-controls {
     line-height: 150%;
 
     @include d(m) {
-        // max-width: 500px;
         font-size: 62px !important;
     }
 

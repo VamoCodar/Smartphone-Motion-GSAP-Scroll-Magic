@@ -482,7 +482,7 @@ let trigerSecaoPresente = .4;
      })
      .to(".presenteAnimation", .2, {
          y: 0,
-     }, "-=0.200")
+     }, "-=0.100")
 
 
 
