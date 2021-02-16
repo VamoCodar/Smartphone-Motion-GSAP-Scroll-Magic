@@ -75,7 +75,12 @@
          scaleVariable = 13
          xInicial = 200
 
-     }
+     }else if (tela >= 2400) {
+        scaleVariable = 16
+        xInicial = 200
+
+    }
+
 
  }
  scale()
