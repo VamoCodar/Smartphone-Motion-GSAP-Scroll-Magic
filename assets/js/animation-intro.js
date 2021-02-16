@@ -71,12 +71,8 @@
          scaleVariable = 13
          xInicial = 150
 
-     } else if (tela >= 2000) {
-         scaleVariable = 13
-         xInicial = 200
-
-     }else if (tela >= 2400) {
-        scaleVariable = 16
+     } else if (tela >= 2400) {
+        scaleVariable = 20
         xInicial = 200
 
     }
